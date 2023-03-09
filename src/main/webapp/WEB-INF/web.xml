@@ -19,4 +19,14 @@
     <servlet-name>NuevaEmpresaServlet</servlet-name>
     <url-pattern>/nuevaEmpresa</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListaEmpresas</display-name>
+    <servlet-name>ListaEmpresas</servlet-name>
+    <servlet-class>com.alura.gerenciador.servlet.ListaEmpresas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListaEmpresas</servlet-name>
+    <url-pattern>/listaEmpresas</url-pattern>
+  </servlet-mapping>
 </web-app>
