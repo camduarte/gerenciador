@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="java.util.List, com.alura.gerenciador.servlet.Empresa"%>
+<%@ page import="java.util.List, com.alura.gerenciador.servlet.Empresa"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +10,12 @@
 </head>
 <body>
 	Lista de empresas: <br>
+
 	<ul>
-	<%	List<Empresa> lista = (List<Empresa>)request.getAttribute("empresas");
-		for(Empresa empresa : lista) {
-	%>
-			<li><%= empresa.getNombre()%></li>
-	<%
-		}
-	%>
+		<c:forEach items="${ empresas }" var="empresa">
+			<li>${ empresa.nombre }</li>
+		</c:forEach>
 	</ul>
+
 </body>
 </html>
