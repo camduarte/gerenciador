@@ -22,11 +22,11 @@
   <servlet>
     <description></description>
     <display-name>ListaEmpresas</display-name>
-    <servlet-name>ListaEmpresas</servlet-name>
-    <servlet-class>com.alura.gerenciador.servlet.ListaEmpresas</servlet-class>
+    <servlet-name>ListaEmpresasServlet</servlet-name>
+    <servlet-class>com.alura.gerenciador.servlet.ListaEmpresasServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ListaEmpresas</servlet-name>
+    <servlet-name>ListaEmpresasServlet</servlet-name>
     <url-pattern>/listaEmpresas</url-pattern>
   </servlet-mapping>
 </web-app>
