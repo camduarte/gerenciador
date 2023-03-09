@@ -1,8 +1,3 @@
-<% 
-	String empresa = "Alura";
-	System.out.println(empresa);
- %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +5,6 @@
 <title></title>
 </head>
 <body>
-Empresa <%= empresa %> registrada!
+	Empresa ${ empresa.nombre } registrada!
 </body>
 </html>

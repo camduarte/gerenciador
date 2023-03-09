@@ -13,16 +13,16 @@ public class NuevaEmpresaServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("nueva empresa resgistrada");
-		String nombreEmpresa = request.getParameter("nombre");
 
+		String nombre = request.getParameter("nombre");
 		Empresa empresa = new Empresa();
-		empresa.setNombre(nombreEmpresa);
+		empresa.setNombre(nombre);
 
 		DB baseDatos = new DB();
 		baseDatos.agregar(empresa);
 
-		RequestDispatcher rd = request.getRequestDispatcher("/nuevaEmpersaRegistrada.jsp");
-		request.setAttribute("nombreEmpresa", empresa.getNombre());
+		RequestDispatcher rd = request.getRequestDispatcher("/nuevaEmpresaRegistrada.jsp");
+		request.setAttribute("empresa", empresa);
 		rd.forward(request, response);
 	}
 
