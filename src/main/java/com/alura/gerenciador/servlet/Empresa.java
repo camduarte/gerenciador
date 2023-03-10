@@ -1,8 +1,11 @@
 package com.alura.gerenciador.servlet;
 
+import java.util.Date;
+
 public class Empresa {
 	private int id;
 	private String nombre;
+	private Date fechaAbertura;
 	
 	public int getId() {
 		return id;
@@ -15,6 +18,12 @@ public class Empresa {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	public Date getFechaAbertura() {
+		return fechaAbertura;
+	}
+	public void setFechaAbertura(Date fechaAbertura) {
+		this.fechaAbertura = fechaAbertura;
 	}
 
 }
