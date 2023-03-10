@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List, com.alura.gerenciador.servlet.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +11,10 @@
 </head>
 <body>
 	Lista de empresas: <br>
-
+	
 	<ul>
 		<c:forEach items="${ empresas }" var="empresa">
-			<li>${ empresa.nombre }</li>
+			<li>${ empresa.nombre } - <fmt:formatDate value="${ empresa.fechaAbertura }" pattern="dd/MM/yyyy"/></li>
 		</c:forEach>
 	</ul>
 

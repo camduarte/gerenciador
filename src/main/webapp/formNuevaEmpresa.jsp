@@ -10,6 +10,8 @@
 	<form action="${ linkServletNuevaEmpresa }" method="post">
 		<label for="nombreEmpresa">Nombre Empresa:</label>
 		<input id="nombreEmpresa" type="text" name="nombre">
+		<label for="fechaAbertura">Fecha abertura</label>
+		<input id="fechaAbertura" type="date" name="fecha">
 		<button type="submit">Enviar</button>
 	</form>
 </body>
