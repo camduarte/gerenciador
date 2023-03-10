@@ -10,8 +10,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<c:if test="${ not empty empresa }">
+		Empresa ${ empresa.nombre } registrada!
+	</c:if>
+	<br>
+
 	Lista de empresas: <br>
-	
 	<ul>
 		<c:forEach items="${ empresas }" var="empresa">
 			<li>${ empresa.nombre } - <fmt:formatDate value="${ empresa.fechaAbertura }" pattern="dd/MM/yyyy"/></li>
