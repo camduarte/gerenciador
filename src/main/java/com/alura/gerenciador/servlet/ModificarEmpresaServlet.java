@@ -15,10 +15,10 @@ public class ModificarEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 9202896330278089685L;
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("Modificar empresa Servlet");
 
-		int id = Integer.parseInt(req.getParameter("id"));
+		Integer id = Integer.parseInt(req.getParameter("id"));
 		String nombre = req.getParameter("nombre");
 		String fecha = req.getParameter("fecha");
 
@@ -29,10 +29,6 @@ public class ModificarEmpresaServlet extends HttpServlet {
 		} catch (ParseException e) {
 			throw new ServletException(e);
 		}
-
-		System.out.println(id);
-		System.out.println(nombre);
-		System.out.println(fechaAbertura);
 
 		DB baseDatos = new DB();
 		baseDatos.modificarEmpresa(id, nombre, fechaAbertura);

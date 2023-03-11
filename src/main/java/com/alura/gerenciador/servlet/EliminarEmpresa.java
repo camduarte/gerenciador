@@ -12,7 +12,7 @@ public class EliminarEmpresa extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Eliminar empresa Servlet");
-		int id = Integer.parseInt(request.getParameter("id"));
+		Integer id = Integer.valueOf(request.getParameter("id"));
 		DB db = new DB();
 		db.eliminarEmpresa(id);
 		response.sendRedirect("listaEmpresas");

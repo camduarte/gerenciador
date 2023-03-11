@@ -3,14 +3,14 @@ package com.alura.gerenciador.servlet;
 import java.util.Date;
 
 public class Empresa {
-	private int id;
+	private Integer id;
 	private String nombre;
 	private Date fechaAbertura;
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNombre() {
