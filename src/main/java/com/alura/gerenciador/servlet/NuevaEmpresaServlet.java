@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -30,7 +31,8 @@ public class NuevaEmpresaServlet extends HttpServlet {
 		Empresa empresa = new Empresa();
 		empresa.setNombre(nombre);
 		empresa.setFechaAbertura(fechaAbertura);
-
+		empresa.setId(new Random().nextInt(100000));
+		
 		DB baseDatos = new DB();
 		baseDatos.agregar(empresa);
 

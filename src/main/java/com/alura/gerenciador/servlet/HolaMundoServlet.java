@@ -11,6 +11,8 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/hola")
 public class HolaMundoServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 3811992510078247633L;
+
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		PrintWriter out = resp.getWriter();

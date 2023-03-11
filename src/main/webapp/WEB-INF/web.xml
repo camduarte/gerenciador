@@ -29,4 +29,34 @@
     <servlet-name>ListaEmpresasServlet</servlet-name>
     <url-pattern>/listaEmpresas</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description>Servlet encargado de las solicitudes de eliminación de empresas.</description>
+    <display-name>EliminarEmpresa</display-name>
+    <servlet-name>EliminarEmpresa</servlet-name>
+    <servlet-class>com.alura.gerenciador.servlet.EliminarEmpresa</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminarEmpresa</servlet-name>
+    <url-pattern>/eliminarEmpresa</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Servlet encargado de las solicitudes de modicación de empresas.</description>
+    <display-name>modificarEmpresa</display-name>
+    <servlet-name>modificarEmpresa</servlet-name>
+    <servlet-class>com.alura.gerenciador.servlet.ModificarEmpresaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>modificarEmpresa</servlet-name>
+    <url-pattern>/modificarEmpresa</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Servlet encargado de las solicitudes de mostrar los datos de una empresa.</description>
+    <display-name>MostrarEmpresaServlet</display-name>
+    <servlet-name>MostrarEmpresaServlet</servlet-name>
+    <servlet-class>com.alura.gerenciador.servlet.MostrarEmpresaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MostrarEmpresaServlet</servlet-name>
+    <url-pattern>/mostrarEmpresa</url-pattern>
+  </servlet-mapping>
 </web-app>
