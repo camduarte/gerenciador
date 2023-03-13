@@ -33,7 +33,7 @@
     <description>Servlet encargado de las solicitudes de eliminación de empresas.</description>
     <display-name>EliminarEmpresa</display-name>
     <servlet-name>EliminarEmpresa</servlet-name>
-    <servlet-class>com.alura.gerenciador.servlet.EliminarEmpresa</servlet-class>
+    <servlet-class>com.alura.gerenciador.servlet.EliminarEmpresaServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>EliminarEmpresa</servlet-name>

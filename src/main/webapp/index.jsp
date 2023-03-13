@@ -8,7 +8,7 @@
 </head>
 <body>
 	<ul>
-		<li><a href="./listaEmpresas">Lista de empresas</a></li>
+		<li><a href="./entrada?accion=listaEmpresas">Lista de empresas</a></li>
 		<li><a href="./formNuevaEmpresa.jsp">Nueva empresa</a></li>
 	</ul>
 </body>
