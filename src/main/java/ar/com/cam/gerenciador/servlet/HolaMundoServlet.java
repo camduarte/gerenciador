@@ -1,4 +1,4 @@
-package com.alura.gerenciador.servlet;
+package ar.com.cam.gerenciador.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;

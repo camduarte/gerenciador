@@ -1,23 +1,22 @@
-package com.alura.gerenciador.servlet;
+package ar.com.cam.gerenciador.servlet;
 
 import java.io.IOException;
 
-import jakarta.servlet.RequestDispatcher;
+import ar.com.camd.gerenciador.modelo.DB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class MostrarEmpresaServlet extends HttpServlet {
+public class EliminarEmpresa extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Integer id = Integer.parseInt(request.getParameter("id"));
+		System.out.println("Eliminar empresa Servlet");
+		Integer id = Integer.valueOf(request.getParameter("id"));
 		DB db = new DB();
-		Empresa empresa = db.buscarEmpresa(id);
-		request.setAttribute("empresa", empresa);
-		RequestDispatcher rd =  request.getRequestDispatcher("/mostrarEmpresa.jsp");
-		rd.forward(request, response);
+		db.eliminarEmpresa(id);
+		response.sendRedirect("listaEmpresas");
 	}
 
 }

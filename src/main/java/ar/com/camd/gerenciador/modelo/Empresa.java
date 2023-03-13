@@ -1,4 +1,4 @@
-package com.alura.gerenciador.servlet;
+package ar.com.camd.gerenciador.modelo;
 
 import java.util.Date;
 
