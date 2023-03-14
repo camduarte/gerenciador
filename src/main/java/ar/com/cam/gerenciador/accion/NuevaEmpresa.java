@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class NuevaEmpresa {
-	public void ejecutar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String ejecutar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nombre = request.getParameter("nombre");
 		String fecha = request.getParameter("fecha");
 
@@ -31,7 +31,7 @@ public class NuevaEmpresa {
 		DB baseDatos = new DB();
 		baseDatos.agregar(empresa);
 
-		response.sendRedirect("entrada?accion=listaEmpresas");
+		return "redirect:entrada?accion=listaEmpresas";
 	}
 
 }
