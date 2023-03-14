@@ -1,4 +1,4 @@
-package ar.com.cam.gerenciador.servlet;
+package ar.com.camd.gerenciador.servlet;
 
 import java.io.IOException;
 

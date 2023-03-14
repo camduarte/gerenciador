@@ -1,4 +1,4 @@
-package ar.com.cam.gerenciador.accion;
+package ar.com.camd.gerenciador.accion;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class MostrarEmpresa {
+public class MostrarEmpresa implements Accion {
 	public String ejecutar(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		DB db = new DB();

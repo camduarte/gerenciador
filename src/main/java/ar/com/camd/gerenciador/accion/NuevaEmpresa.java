@@ -1,4 +1,4 @@
-package ar.com.cam.gerenciador.accion;
+package ar.com.camd.gerenciador.accion;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -6,14 +6,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import ar.com.camd.gerenciador.modelo.DB;
+import ar.com.camd.gerenciador.modelo.Empresa;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class ModificarEmpresa {
-
+public class NuevaEmpresa implements Accion {
 	public String ejecutar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Integer id = Integer.parseInt(request.getParameter("id"));
 		String nombre = request.getParameter("nombre");
 		String fecha = request.getParameter("fecha");
 
@@ -25,10 +24,14 @@ public class ModificarEmpresa {
 			throw new ServletException(e);
 		}
 
-		DB baseDatos = new DB();
-		baseDatos.modificarEmpresa(id, nombre, fechaAbertura);
+		Empresa empresa = new Empresa();
+		empresa.setNombre(nombre);
+		empresa.setFechaAbertura(fechaAbertura);
 
-		return "redirect:entrada?accion=listaEmpresas";
+		DB baseDatos = new DB();
+		baseDatos.agregar(empresa);
+
+		return "redirect:entrada?accion=ListaEmpresas";
 	}
 
 }

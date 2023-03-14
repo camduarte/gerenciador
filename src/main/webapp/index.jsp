@@ -8,8 +8,8 @@
 </head>
 <body>
 	<ul>
-		<li><a href="./entrada?accion=listaEmpresas">Lista de empresas</a></li>
-		<li><a href="./entrada?accion=nuevaEmpresaForm">Nueva empresa</a></li>
+		<li><a href="./entrada?accion=ListaEmpresas">Lista de empresas</a></li>
+		<li><a href="./entrada?accion=NuevaEmpresaForm">Nueva empresa</a></li>
 	</ul>
 </body>
 </html>
