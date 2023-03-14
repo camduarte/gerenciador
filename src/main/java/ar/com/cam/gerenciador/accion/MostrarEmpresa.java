@@ -14,6 +14,6 @@ public class MostrarEmpresa {
 		DB db = new DB();
 		Empresa empresa = db.buscarEmpresa(id);
 		request.setAttribute("empresa", empresa);
-		return "forward:/mostrarEmpresa.jsp";
+		return "forward:mostrarEmpresa.jsp";
 	}
 }

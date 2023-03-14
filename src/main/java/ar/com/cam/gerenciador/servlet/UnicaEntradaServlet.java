@@ -7,6 +7,7 @@ import ar.com.cam.gerenciador.accion.ListaEmpresas;
 import ar.com.cam.gerenciador.accion.ModificarEmpresa;
 import ar.com.cam.gerenciador.accion.MostrarEmpresa;
 import ar.com.cam.gerenciador.accion.NuevaEmpresa;
+import ar.com.cam.gerenciador.accion.NuevaEmpresaForm;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -48,13 +49,17 @@ public class UnicaEntradaServlet extends HttpServlet {
 			ModificarEmpresa modificarEmpresa = new ModificarEmpresa();
 			datos = modificarEmpresa.ejecutar(request, response);
 			break;
+		case "nuevaEmpresaForm":
+			NuevaEmpresaForm nuevaEmpresaForm = new NuevaEmpresaForm();
+			datos = nuevaEmpresaForm.ejecutar(request, response);
+			break;
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + accion);
 		}
 
 		String[] tipoDireccion = datos.split(":");
 		if (tipoDireccion[0].equals("forward")) {
-			RequestDispatcher rd = request.getRequestDispatcher(tipoDireccion[1]);
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/"+tipoDireccion[1]);
 			rd.forward(request, response);
 		} else {
 			response.sendRedirect(tipoDireccion[1]);
