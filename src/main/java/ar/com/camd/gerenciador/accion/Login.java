@@ -7,6 +7,7 @@ import ar.com.camd.gerenciador.modelo.Usuario;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class Login implements Accion {
 
@@ -19,11 +20,13 @@ public class Login implements Accion {
 		System.out.println(contrasena);
 
 		DB db = new DB();
-		Usuario us = db.buscarUsuario(login);
+		Usuario usuario = db.buscarUsuario(login);
 
 		String url = null;
-		if (us != null && us.esIgual(login, contrasena)) {
+		if (usuario != null && usuario.esIgual(login, contrasena)) {
 			System.out.println("USUARIO LOGUEADO");
+			HttpSession session = request.getSession();
+			session.setAttribute("usuario", usuario);
 			url = "redirect:entrada?accion=ListaEmpresas";
 		} else {
 			System.out.println("USUARIO NO LOGUEADO");
