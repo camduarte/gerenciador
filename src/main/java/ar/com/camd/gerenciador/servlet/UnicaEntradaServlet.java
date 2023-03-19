@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
@@ -16,8 +17,18 @@ public class UnicaEntradaServlet extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String paramAccion = request.getParameter("accion");
-		String datos = null;
+		HttpSession sesion = request.getSession();
 
+		boolean esUsuarioNoLogueado = sesion.getAttribute("usuario") == null;
+		boolean esAccionProtegida = !(paramAccion.equals("MostrarLoginForm") || paramAccion.equals("Login")); 
+	
+		// Si el usuario no está logueado redirecciona al formulario de login.
+		if (esUsuarioNoLogueado && esAccionProtegida) {
+			response.sendRedirect("entrada?accion=MostrarLoginForm");
+			return;
+		}
+
+		String datos = null;
 		Accion accion;
 		try {
 			Class clase = Class.forName("ar.com.camd.gerenciador.accion."+paramAccion);

@@ -25,8 +25,8 @@ public class Login implements Accion {
 		String url = null;
 		if (usuario != null && usuario.esIgual(login, contrasena)) {
 			System.out.println("USUARIO LOGUEADO");
-			HttpSession session = request.getSession();
-			session.setAttribute("usuario", usuario);
+			HttpSession sesion = request.getSession();
+			sesion.setAttribute("usuario", usuario);
 			url = "redirect:entrada?accion=ListaEmpresas";
 		} else {
 			System.out.println("USUARIO NO LOGUEADO");
