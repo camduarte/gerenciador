@@ -12,6 +12,7 @@
 <body>
 
 	Usuario logueado: ${ usuario.login }
+	<c:import url="./logout-parcial.jsp"></c:import>
 	<br>
 
 	<c:if test="${ not empty empresa }">

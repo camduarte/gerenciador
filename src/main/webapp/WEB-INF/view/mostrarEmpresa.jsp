@@ -8,6 +8,8 @@
 <title>Modificar Empresa</title>
 </head>
 <body>
+	<c:import url="./logout-parcial.jsp"></c:import>
+
 	<form action="${ linkModificarEmpresa }" method="post">
 		<label for="nombreEmpresa">Nombre Empresa:</label>
 		<input id="nombreEmpresa" type="text" name="nombre" value="${ empresa.nombre }">

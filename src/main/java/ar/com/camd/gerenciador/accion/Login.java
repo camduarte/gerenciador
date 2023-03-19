@@ -30,7 +30,7 @@ public class Login implements Accion {
 			url = "redirect:entrada?accion=ListaEmpresas";
 		} else {
 			System.out.println("USUARIO NO LOGUEADO");
-			url = "redirect:entrada?accion=MostrarLoginForm";
+			url = "redirect:entrada?accion=LoginForm";
 		}
 		return url;
 	}

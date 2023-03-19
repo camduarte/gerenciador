@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<c:import url="./logout-parcial.jsp"></c:import>
+
 	<form action="${ linkNuevaEmpresa }" method="post">
 		<label for="nombreEmpresa">Nombre Empresa:</label>
 		<input id="nombreEmpresa" type="text" name="nombre">

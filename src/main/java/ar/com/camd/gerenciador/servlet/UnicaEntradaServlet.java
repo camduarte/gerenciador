@@ -20,11 +20,11 @@ public class UnicaEntradaServlet extends HttpServlet {
 		HttpSession sesion = request.getSession();
 
 		boolean esUsuarioNoLogueado = sesion.getAttribute("usuario") == null;
-		boolean esAccionProtegida = !(paramAccion.equals("MostrarLoginForm") || paramAccion.equals("Login")); 
+		boolean esAccionProtegida = !(paramAccion.equals("LoginForm") || paramAccion.equals("Login")); 
 	
 		// Si el usuario no está logueado redirecciona al formulario de login.
 		if (esUsuarioNoLogueado && esAccionProtegida) {
-			response.sendRedirect("entrada?accion=MostrarLoginForm");
+			response.sendRedirect("entrada?accion=LoginForm");
 			return;
 		}
 
