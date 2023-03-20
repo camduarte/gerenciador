@@ -3,28 +3,22 @@ package ar.com.camd.gerenciador.servlet;
 import java.io.IOException;
 
 import ar.com.camd.gerenciador.accion.Accion;
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-//@WebServlet("/entrada")
-public class UnicaEntradaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class ControladorFilter implements Filter {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
+		System.out.println("ControladorFilter");
+		HttpServletRequest request = (HttpServletRequest) servletRequest;
+		HttpServletResponse response = (HttpServletResponse) servletResponse;
 		String paramAccion = request.getParameter("accion");
-//		HttpSession sesion = request.getSession();
-//
-//		boolean esUsuarioNoLogueado = sesion.getAttribute("usuario") == null;
-//		boolean esAccionProtegida = !(paramAccion.equals("LoginForm") || paramAccion.equals("Login")); 
-//	
-//		// Si el usuario no está logueado redirecciona al formulario de login.
-//		if (esUsuarioNoLogueado && esAccionProtegida) {
-//			response.sendRedirect("entrada?accion=LoginForm");
-//			return;
-//		}
 
 		String datos = null;
 		Accion accion;
