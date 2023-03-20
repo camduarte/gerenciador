@@ -4,6 +4,9 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <session-config>
+    <session-timeout>10</session-timeout>
+  </session-config>
   <servlet>
     <description></description>
     <display-name>NuevaEmpresaServlet</display-name>
@@ -54,4 +57,21 @@
     <servlet-name>MostrarEmpresaServlet</servlet-name>
     <url-pattern>/mostrarEmpresa</url-pattern>
   </servlet-mapping>
+  <!-- Filtros -->
+  <filter>
+  	<filter-name>MF</filter-name>
+  	<filter-class>ar.com.camd.gerenciador.servlet.MonitoreoFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>MF</filter-name>
+  	<url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+  <filter>
+  	<filter-name>AF</filter-name>
+  	<filter-class>ar.com.camd.gerenciador.servlet.AutorizacionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>AF</filter-name>
+  	<url-pattern>/entrada</url-pattern>
+  </filter-mapping>
 </web-app>
